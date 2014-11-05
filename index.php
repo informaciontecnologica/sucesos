@@ -12,7 +12,9 @@ require_once('Connections/localhost.php');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-     
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <script src="mapas.js" type="text/javascript"></script>
        
     </head>
@@ -46,7 +48,7 @@ require_once('Connections/localhost.php');
         </section>
         <footer>
            <?php pie(); ?>
-            <div id="corte"></div>
+
         </footer>
 
 

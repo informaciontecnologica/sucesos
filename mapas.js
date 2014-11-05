@@ -27,15 +27,15 @@ function iniciacion() {
                     var slat = $(this).find('latitud').text();
                     var slong = $(this).find('longitud').text();
                     var stipodesuceso = $(this).find('tipodesuceso').text();
-//                    var icons = $(this).find('icons').text();
-//                    var image = 'imagenes/tipossucesos/' + 'Reparacion_Gas' +'.png';
-//                    var sdireccion = $(this).find('direccion').text();
+                    var icons = $(this).find('icons').text();
+                    var image = 'imagenes/tipossucesos/' + 'Reparacion_Gas' +'.png';
+                    var sdireccion = $(this).find('direccion').text();
                                 $("<li></li>").html(slat + "," + slong + ",").appendTo("#corte");
                     var southWest = new google.maps.LatLng(slat, slong);
 
-//                    var contentString = '<div id="content"><p>'  +stipodesuceso + '</p><p>'
-//                             sdireccion 
-//                            '</p></div>';
+                    var contentString = '<div id="content"><p>'  +stipodesuceso + '</p><p>'
+                             sdireccion 
+                            '</p></div>';
 
                     var infowindow = new google.maps.InfoWindow({
                         content: contentString
@@ -45,8 +45,8 @@ function iniciacion() {
                     var marker = new google.maps.Marker({
                         position: southWest,
                         map: map,
-                        title: stipodesuceso
-//                        icon: image
+                        title: stipodesuceso,
+                        icon: image
                     });
                     google.maps.event.addListener(marker, 'click', function() {
                         infowindow.open(map, marker);
