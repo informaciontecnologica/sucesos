@@ -77,9 +77,11 @@ nav  li a:hover{
 }
 #viga {
     float: left;
-    background-color:  #000000;
+    background-color: #82C6E0  ;
     width :100%;
     height: 25px;
+    border-radius: 11px;
+     margin: 2px;
 
 }
 section{

@@ -25,6 +25,7 @@ and open the template in the editor.
                 <h3>Localizacion de accidentes Transito, reparacion de: calles, caÃ±os de agua, electricos, semaforos</h3> </div>          
             <nav>
           <?php navegacion(); ?>
+                      <div id="viga"></div>
             </nav>
         </header>
 
