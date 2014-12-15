@@ -15,21 +15,11 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
-        <link href="jquery/themes/ui.jqgrid.css" rel="stylesheet" type="text/css"/>
-        <link href="jquery/themes/ui.multiselect.css" rel="stylesheet" type="text/css"/>
-        <link href="jquery/themes/redmond/jquery-ui-custom.css" rel="stylesheet" type="text/css"/>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-
-        <script src="jquery/js/jquery.js" type="text/javascript"></script>
-        <script src="jquery/js/i18n/grid.locale-es.js" type="text/javascript"></script> 
-        <script type="text/javascript">
-            $.jgrid.no_legacy_api = true;
-            $.jgrid.useJSON = true;
-        </script> 
-        <script src="jquery/js/jquery.jqGrid.min.js" type="text/javascript"></script> 
-        <script src="jquery/js/jquery-ui-custom.min.js" type="text/javascript"></script> 
-
-        <script src="script/mapas.js" type="text/javascript"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script src="mapas.js" type="text/javascript"></script>
 
     </head>
     <body  onload="load()" onunload="GUnload()">
@@ -74,7 +64,7 @@ and open the template in the editor.
             if (isset($_GET['Listado'])){
             echo "<div id=\"tablero\">".Listadosucesos(0). "</div>";
             } else {
-            echo "<div id=\"mapa\" > </div>  "; }
+            echo "<div id=\"mapa\" style=\"width: 75%; height: 450px\" >aaaaaa </div>  "; }
             ?>
             
         </article>

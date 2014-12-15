@@ -7,8 +7,8 @@ global $hostname_localhost ;
       $hostname_localhost  = "localhost";
 global $database_localhost;
 $database_localhost = "sucesos";
-$username_localhost = "sucesos";
-$password_localhost = "123456";
+$username_localhost = "daniel";
+$password_localhost = "123";
 $localhost = mysql_pconnect($hostname_localhost, $username_localhost, $password_localhost) or trigger_error(mysql_error(),E_USER_ERROR); 
 
 if (!function_exists("GetSQLValueString")) {

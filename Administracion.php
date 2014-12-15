@@ -3,6 +3,7 @@
 require_once('funciones/Top.php');
 require_once('Connections/localhost.php');
 require_once('configuracion.php');
+//require_once 'funciones.php';
 
 ?>
 <!--
@@ -32,7 +33,11 @@ and open the template in the editor.
         </header>
 
         <aside id="menu"> 
-            <?php menu(); ?>          
+            <?php
+             if (!empty($_SESSION['Nombre']) ){
+            menu(); // error de pagina no sale en el primer inicion de sesion
+            
+             }?>          
 
         </aside>
         <section id="seccion"> 

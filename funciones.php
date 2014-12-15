@@ -8,16 +8,16 @@
  * and open the template in the editor.
  */
 
-function Top() {
-    $query = "select * from sucesos   left join tiposucesos"
-            . " on id_tipo_suceso=id_tiposucesos order by fecha,hora LIMIT 10 ";
-    $consulta = mysql_db_query("sucesos", $query);
-    echo "<lu>";
-    while ($result = mysql_fetch_assoc($consulta)) {
-        echo "<li>" . $result['TipoSuceso'] . "-" . $result['direccion'] . "</li>";
-    }
-    echo "</lu>";
-}
+//function Top() {
+//    $query = "select * from sucesos   left join tiposucesos"
+//            . " on id_tipo_suceso=id_tiposucesos order by fecha,hora LIMIT 10 ";
+//    $consulta = mysql_db_query("sucesos", $query);
+//    echo "<lu>";
+//    while ($result = mysql_fetch_assoc($consulta)) {
+//        echo "<li>" . $result['TipoSuceso'] . "-" . $result['direccion'] . "</li>";
+//    }
+//    echo "</lu>";
+//}
 
 function Listasucesos() {
     $query = "select * from tiposucesos"
@@ -113,7 +113,7 @@ function Ingreso() {
 
 function pie() {
     echo "<div class=\"pie1\"><p> Informacion tecnologica"
-    . " mail:info@informaciotnec.com.ar "
+    . " mail:info@informaciontecn.com.ar "
     . "Tele:54-307-1025421"
     . "Av. 25 de mayo 1542 Formosa- Argentina</p></div>";
 }

@@ -10,15 +10,17 @@ if (isset($_GET['cerrar'])) {
        session_destroy();
     }
 }
+function nombre(){
 if (isset($_SESSION['nombre'])) {
-    $_SESSION['nombre'] = $_POST['nombre'];
-    echo "Bienvenido! Has iniciado sesion: " . $_POST['nombre'];
+    if (!empty($_SESSION['nombre'])){
+    echo $_SESSION['nombre'];
 //} else {
 //    if (isset($_SESSION['nombre'])) {
 //        echo "Has iniciado Sesion: " . $_SESSION['nombre'];
 //    } else {
 //        echo "Acceso Restringido";
-//    }
+    }
+}
 }
 ?>
 <script src="script/funciones.js" type="text/javascript"></script> 
@@ -147,13 +149,13 @@ function Grillasucesos() {
 }
 
 function navegacion() {
-
     echo "<ul>
-                    <li ><a href=\"index.php\">Inicio</a></li>
+                    <li><a href=\"index.php\">Inicio</a></li>
+                    <li><a href=\"Administracion.php\">Administracion</a></li>
                     <li><a href=\"somos.php\">Somos</a></li>
                     <li><a href=\"contacto.php\">Contacto</a></li>
-                    " . Ingreso() .
-    "</ul>";
+                </ul>";
+    Ingreso();
 }
 
 function Ingreso() {
@@ -172,13 +174,7 @@ function pie() {
     . "Av. 25 de mayo 1542 Formosa Argentina</p></div>";
 }
 
-function menu() {
-    echo "<ul>
-            <li><a href=\"formularioSucesos.php\">Tipo de Sucesos</a></li>
-            <li><a href=\"Administracion.php\">Administracion</a></li>
-            <li><a href=\"Sucesos.php?Nuevo=n\">Sucesos</a></li>
-         </ul>";
-}
+
 
 // altas bajas y modificaciones de los Sucesos
 
@@ -356,5 +352,12 @@ function MenuAdministracion() {
              <li><a href=\"Sucesos.php?Listado=0\">Listado</a> </li>
              </ul>
                        ";
+}
+function menu() {
+    echo "<ul>
+            <li><a href=\"formularioSucesos.php\">Tipo de Sucesos</a></li>
+            <li><a href=\"Administracion.php\">Administracion</a></li>
+            <li><a href=\"Sucesos.php?Nuevo=n\">Sucesos</a></li>
+         </ul>";
 }
 ?>
