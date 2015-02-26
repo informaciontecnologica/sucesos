@@ -4,7 +4,6 @@ require_once('funciones/Top.php');
 require_once('Connections/localhost.php');
 require_once('configuracion.php');
 //require_once 'funciones.php';
-
 ?>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -28,52 +27,32 @@ and open the template in the editor.
                 <h3>Localizacion de accidentes Transito, reparacion de: calles, caÃ±os de agua, electricos, semaforos</h3> </div>          
             <nav>
                 <?php navegacion(); ?>
-                      <div id="viga"></div>
+                <div id="viga"></div>
             </nav>
         </header>
 
         <aside id="menu"> 
-            <?php
-             if (!empty($_SESSION['Nombre']) ){
-            menu(); // error de pagina no sale en el primer inicion de sesion
-            
-             }?>          
+            <?php  Top();  ?>        
 
         </aside>
         <section id="seccion"> 
             <article>
                 <?php
-                if (isset($_POST['Nombre'])) {
-                    
-                    $Nombre=$_POST['Nombre'];
-                    $Clave=$_POST['Clave'];
-                    $sql = "select * from usuarios where nombre_usuario='$Nombre' and clave='$Clave'";
-                    $resultado = mysql_db_query("sucesos",$sql);
-                    if ($campo=  mysql_fetch_assoc($resultado)){
-                    // 
-                    // //                   $campos= mysql_fetch_assoc($resultado);
-                       echo $campo['clave'];
-                       $_SESSION['Nombre']=$campo['nombre_usuario'];
-                         echo $_SESSION['Nombre'];                     
-//                        echo mysql_num_rows($resultado);
-                     
-                    }
-                } else {
+                if (!isset($_SESSION['Nombre'])) {
                     echo '<form name = "sesiones" action = "Administracion.php" method = "POST">
-            <label>Nombre</label>
-        <input type = "text" name = "Nombre" value = "" size = "16" />
-        
-            <label>Clave </label>
-        <input type = "text" name = "Clave" value = "" size = "16" />
-        <input type = "submit" value = "Ingresar" name = "Enviar" />
-            </form>';
+                    <label>Nombre</label>
+                    <input type = "text" name = "Nombre" value = "" size = "16" />
+                    <label>Clave </label>
+                    <input type = "text" name = "Clave" value = "" size = "16" />
+                    <input type = "submit" value = "Ingresar" name = "Enviar" />
+                    </form>';
                 }
                 ?>
             </article>
 
         </section>
         <footer>
-                <?php pie(); ?>
+<?php pie(); ?>
 
         </footer>
 

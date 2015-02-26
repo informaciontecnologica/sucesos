@@ -37,6 +37,40 @@ body {
     padding: 10px;
 
 }
+/*.ultimos table{
+
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    color: #000000;
+    font-size: 10;
+    padding: 8;
+     text-align:  left;
+}*/
+.ultimos  tr:nth-child(odd) {background-color:buttonshadow;}
+
+.ultimos  tr:nth-child(even) {background-color: #5c9ccc;}
+
+.ultimosucesos{
+
+    font-weight:bold;
+    color:#000000;
+    letter-spacing:2pt;
+    word-spacing:4pt;
+    font-size:18px;
+    text-align:left;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
+    margin:0px;
+    padding:0px;
+    text-align: center;
+
+
+}
+#iconicos {
+    height: 20px;
+    width: 20px;
+}
+
+
 #subtitulo {
     font-size:  x-large;
 }
@@ -58,37 +92,34 @@ nav li{
     font-size: 20px;
     display:inline;
     float:left;
-   
     margin-right:10px;
-    
+
 }
 nav li a {
     padding: 2px 2px 0px 2px;
-   
     background-color: #eeeeee;
     border: 1px solid #ccc;
     text-decoration: none;
-    
     border-radius: 11px 11px 0 0;
 }
 nav  li a:hover{
     background-color:  #5c9ccc;
-    
+
 }
 #viga {
     float: left;
     background-color: #82C6E0  ;
     width :100%;
     height: 25px;
-    border-radius: 11px;
-     margin: 2px;
+    border-radius: 5px;
+    margin-bottom:  2px;
 
 }
-section{
+#seccion{
     padding: 5px;
     float: left;
     width :65%;
-    height: 500px;
+    //height: 500px;
     border-radius: 11px;
     background-color:  #ccc;
 
@@ -101,16 +132,46 @@ section{
     border-radius: 11px;
     background-color:  #ccc;
 }
+.BarraAdministracion{
+    float: left;
+    height: 18px;
+    background-color:  #5c9ccc;
+    border-radius: 11px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+.BarraAdministracion li {
+    font-size: 15px ;
+    padding: 2px 2px 0px 2px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    border-radius: 9px 9px 0 0;
+}
+.BarraAdministracion li a:hover{
+        background-color:  background;
+    }
 #menu{
     margin-right: 5px;
     float: right;
     padding: 10px;
-    width: 25%;
+    width: 30%;
     border: 1px solid #ccc;
     border-radius: 11px;
-    background-color:  #ccc;   
+    /*background-color:  #A3C9F0;*/   
 
 }
+
+.Tablacolores  {width: 200px; border:  1px solid #ccc;}    
+.Tablacolores th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
+    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }
+
+.Tablacolores td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
+    color: #669;    border-top: 1px solid transparent; }
+
+/*.Tablacolores tr:hover td { background: #d0dafd; color: #339; }*/
+.Tablacolores tr:nth-child(odd) {background-color:buttonshadow;}
+
+
 #Menusucesos {
     margin: 2px;
     float: right;
@@ -129,17 +190,22 @@ footer{
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 11px;
-    background-color:  #ccc;
+    background-color:  #82C6E0 ;
 }
 .pie1{
     width:250px;
     padding:5px;
+
 }
 .somos1 {
 
     padding:5px;
-    text-align:justify;
-    line-height:2em;
+font-family: Perpetua;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight:  normal;
+	line-height: 40px;
 
 }
 #art1{
@@ -149,26 +215,15 @@ footer{
 #art{
     /*    border: 1px solid black;*/
     float:left;
+    
 }
 
 #mapa {
+    margin-left: 5px;
     padding:5px;
     width: 600px; 
     height: 480px;
     border-radius: 11px;
-}
-.marco{
-    float: left;
-    text-align:center;
-    width:450px;
-    border: 1px solid black;
-    position: relative;
-    border-radius: 11px;
-    padding:5px ;
-}
-.marco p{
-    display: block;
-    text-align:left;
 }
 
 .nuevo{
@@ -199,11 +254,14 @@ footer{
     border-radius: 11px;  
     border: 1px solid black;
 }
-
+#tablero {
+    
+}
 .formlariosuc {
 
-    margin:1px;padding:0px;
-    width:100%;
+    margin-left: 11px;
+    padding:0px;
+    width:600px;
     box-shadow: 10px 10px 5px #888888;
     border:1px solid #000000;
 
@@ -225,9 +283,9 @@ footer{
 }.formlariosuc table{
     border-collapse: collapse;
     border-spacing: 0;
-    width:100%;
-    height:100%;
-    margin:0px;padding:0px;
+    width:550px;
+    height:450px;
+ 
 }.formlariosuc tr:last-child td:last-child {
     -moz-border-radius-bottomright:11px;
     -webkit-border-bottom-right-radius:11px;
@@ -303,11 +361,28 @@ footer{
 }
 
 #Formulariosucesos{
-    alignment-adjust: auto;
+    /*alignment-adjust: auto;*/
 
 
 }
 #Formulariosucesos input botton{
     left:50px;
 
+}
+.contacto{
+
+    height: 30px;
+    border: 3px solid #EBE6E2;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    width: 270px;
+}
+
+.contacto:focus {
+    border-color: #BBB;
+    outline: none;
 }

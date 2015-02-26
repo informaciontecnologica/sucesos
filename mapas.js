@@ -28,12 +28,12 @@ function iniciacion() {
                     var slong = $(this).find('longitud').text();
                     var stipodesuceso = $(this).find('tipodesuceso').text();
                     var icons = $(this).find('icons').text();
-                    var image = 'imagenes/tipossucesos/' + 'Reparacion_Gas' +'.png';
+                    var image = 'imagenes/tipossucesos/' + icons ;
                     var sdireccion = $(this).find('direccion').text();
                                 $("<li></li>").html(slat + "," + slong + ",").appendTo("#corte");
                     var southWest = new google.maps.LatLng(slat, slong);
 
-                    var contentString = '<div id="content"><p>'  +stipodesuceso + '</p><p>'
+                    var contentString = '<div id="content"><p>'  +stipodesuceso + sdireccion+ '</p><p>'
                              sdireccion 
                             '</p></div>';
 
@@ -45,7 +45,19 @@ function iniciacion() {
                     var marker = new google.maps.Marker({
                         position: southWest,
                         map: map,
-                        title: stipodesuceso,
+//                        draggable:true, poder mover el icono
+//                        Los iconos tiene el tamaño 37 x 29
+//Corte_luz
+//camino_cerrado
+//hombres_trabajando
+//Peligro 
+//reparacion_calle
+//Reparacion_Gas
+//Accidente_auto
+//Pozo.png 
+//Semaforos apagados
+
+                        title: stipodesuceso ,
                         icon: image
                     });
                     google.maps.event.addListener(marker, 'click', function() {

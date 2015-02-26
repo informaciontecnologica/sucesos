@@ -1,8 +1,17 @@
 <?php
 require_once('Connections/localhost.php');
 
-$query = sprintf('select * from sucesos left join  tiposucesos on id_tiposucesos = id_tipo_suceso');
+$query = sprintf('select * from sucesos left join  tiposucesos on id_tiposucesos = id_tipo_suceso where estado="AL"');
 $result = mysql_db_query("sucesos", $query);
+function cacularletra($xmlData){
+    $base =  array ("á","é","í","ó","ú","É","Ó","Ú","ñ","Ñ");
+    $remplazo =array("&aacute;","&eacute;","&iacute;","&oacute;","&uacute;","&Eacute;","&Oacute;","&Uacute;","&ntilde;","&Ntilde;");
+        $conversion = str_replace($base,$remplazo,$xmlData );
+          
+        return $conversion;
+}
+
+
 $rowXml = '<marker> '
         . '<direccion>%s</direccion>'
         . '<idsuceso>%s</idsuceso>'
@@ -16,15 +25,17 @@ $rowXml = '<marker> '
         . '<longitud>%s</longitud>'
         . '</marker>';
 $xml = "<markers>";
+
 while ($row = mysql_fetch_assoc($result)) {
+    $d= cacularletra($row['descripcion']);
     $xml .= sprintf($rowXml . "\n",
-            htmlentities($row['direccion']),
+            htmlentities(cacularletra($row['direccion'])),
             htmlentities($row['id_tiposucesos']),
             htmlentities($row['TipoSuceso']),
             htmlentities($row['icons']),
             htmlentities($row['fecha']), 
             htmlentities($row['hora']),
-            htmlentities($row['descripcion']), 
+            htmlentities(cacularletra($row['descripcion'])), 
             htmlentities($row['duracion']),
             htmlentities($row['Latitud']), 
             htmlentities($row['Longitud']));

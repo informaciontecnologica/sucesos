@@ -111,12 +111,7 @@ function Ingreso() {
     }
 }
 
-function pie() {
-    echo "<div class=\"pie1\"><p> Informacion tecnologica"
-    . " mail:info@informaciontecn.com.ar "
-    . "Tele:54-307-1025421"
-    . "Av. 25 de mayo 1542 Formosa- Argentina</p></div>";
-}
+
 
 function menu() {
     echo "<ul>

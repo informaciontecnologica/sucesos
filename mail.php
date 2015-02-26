@@ -17,8 +17,7 @@ and open the template in the editor.
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
 
     </head>
-    <body  onload="load()" onunload="GUnload()">
-
+    <body  >
         <header> 
             <div  id="logo"><img src="imagenes/logo.jpg" width="377" height="134" alt="Sucesos Urbanos"/>
             </div> 
@@ -26,16 +25,17 @@ and open the template in the editor.
                 <h3>Localizacion de accidentes Transito, reparacion de: calles, caÃ±os de agua, electricos, semaforos</h3> </div>          
             <nav>
           <?php navegacion(); ?>
+                      <div id="viga"></div>
             </nav>
         </header>
 
-        <aside id="lado"> 
-             <?php menu(); ?>          
-            <div id="el"></div>
-        </aside>
+        <aside id="menu"> 
+             <?php Top(); ?>          
+          </aside>
         <section id="seccion"> 
-            <article><div class="gracias">
-                    <div>Contacto</div>
+            <article>
+                
+                   
                    <?php
 if(isset($_POST['mail'])) {
 
@@ -65,13 +65,13 @@ $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
 mail($email_to, $email_subject, $email_message, $headers);
-
-echo "Â¡El formulario se ha enviado con Ã©xito!";
+echo "Gracias!! ".$_POST['nombre']."<br>" ;
+echo "Tu comentario se ha enviado con Exito!";
 }
 
 ?>
                 
-                </div> </article>
+                </article>
         
         </section>
         <footer>

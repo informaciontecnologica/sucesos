@@ -22,58 +22,62 @@ and open the template in the editor.
         <script src="mapas.js" type="text/javascript"></script>
 
     </head>
-    <body  onload="load()" onunload="GUnload()">
-    </head>
-<body>
+    <body  onload="iniciacion()" >
 
-    <header> 
-        <div  id="logo"><img src="imagenes/logo.jpg" width="377" height="134" alt="Sucesos Urbanos"/>
-        </div> 
-        <div id="Titulo"> <h1>Sistema de Sucesos Urbanos</h1>
-            <h3>Localizacion de accidentes Transito, reparacion de: calles, caÃ±os de agua, electricos, semaforos</h3> </div>          
-        <nav>
-            <?php navegacion(); ?>
-        </nav>
-    </header>
+        <header> 
+            <div  id="logo"><img src="imagenes/logo.jpg" width="377" height="134" alt="Sucesos Urbanos"/>
+            </div> 
+            <div id="Titulo"> <h1>Sistema de Sucesos Urbanos</h1>
+                <h3>Localizacion de accidentes Transito, reparacion de: calles, caÃ±os de agua, electricos, semaforos</h3> </div>          
+            <nav>
+                <?php navegacion(); ?>
+            </nav>
+        </header>
 
-    <aside id="Menusucesos">
-        <div style=" display: inline;    text-align: center;   float: right; "> <ul>
-            <li><a href="formularioSucesos.php">Tipo de Sucesos</a></li>
-                                   
-        </ul></div>
-        <div style=" display: inline;    text-align: center;   float: left; "> 
-        <ul>
-            <li style="float: left; "><a href="Sucesos.php?Nuevo=N">Nuevo</a></li>
-             <li style="float: left; margin-left: 20px;"><a href="Sucesos.php?Listado=0">Listado</a></li>
-                       
-        </ul></div>
-       
-        
-    </aside>
-    <section class="sectionsucesos"> 
-        <article id="art1">
-            <div class="marco">
-                <?php 
-                ABMSucesos();
-                
-                Forsuceso(); ?>  
-            </div>
-        </article>
-        <article id="art">
-            <?php 
-            if (isset($_GET['Listado'])){
-            echo "<div id=\"tablero\">".Listadosucesos(0). "</div>";
-            } else {
-            echo "<div id=\"mapa\" style=\"width: 75%; height: 450px\" >aaaaaa </div>  "; }
-            ?>
-            
-        </article>
-    </section>
-    <footer>
-        <?php pie(); ?>
+        <aside id="Menusucesos">
+            <div style=" display: inline;    text-align: center;   float: right; "> <ul>
+                    <li><a href="formularioSucesos.php">Tipo de Sucesos</a></li>
 
-    </footer>
+                </ul></div>
+            <div style=" display: inline;    text-align: center;   float: left; "> 
+                <ul>
+                    <li style="float: left; "><a href="Sucesos.php?Nuevo=N">Nuevo</a></li>
+                    <li style="float: left; margin-left: 20px;"><a href="Sucesos.php?Listado=0">Listado</a></li>
+
+                </ul></div>
 
 
-</body>
+        </aside>
+        <section class="sectionsucesos"> 
+           <?php
+            if ((isset($_GET['Editar']) || (isset($_GET['Nuevo'])))) { ?>
+           <article id="art1">
+                <div class="marco">
+                    <?php
+                    ABMSucesos();
+
+                    Forsuceso();
+                    ?>  
+                </div>
+            </article> 
+             <?php  
+            } ?>
+            <article id="art">
+                <?php
+                if (isset($_GET['Listado'])) {
+                    echo "<div id=\"tablero\">" . Listadosucesos(0) . "</div>";
+                } else {
+                    echo "<div id=\"mapa\"></div>  ";
+                }
+                ?>
+
+            </article>
+        </section>
+        <footer>
+<?php pie(); ?>
+
+        </footer>
+
+
+    </body>
 </html>
